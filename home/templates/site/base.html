@@ -1,0 +1,50 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'style/base.css' %}">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    {% block css_file %}{% endblock %}
+</head>
+<body>
+    <header>
+      
+      <div class="nav-container"></div>
+        <h1>Vito Di Venosa.</h1>
+        <button class="mobile-nav-toggle" aria-controls="primary-navigation" aria-expanded="false">
+            <img src="{% static 'style/includes/menu.png' %}" alt="" width="40px" height="40px" id="toggle-img">
+          </button>
+          
+          <nav>
+            <ul id="primary-navigation" data-visible="false" class="primary-navigation flex">
+              <li><a href="{% url 'home-page' %}" class="active">Home</a></li>
+              <li><a href="{% url 'my-projects' %}">My Project</a></li>
+              <li><a href="{% url 'about_me' %}">About</a></li>
+              <li><a href="{% url 'contact_me' %}">Contact</a></li>
+              <li></li>
+            </ul>
+          </nav>
+        </div>
+
+          <script>
+            const mobileNavToggle = document.querySelector(".mobile-nav-toggle");
+            const primaryNavigation = document.querySelector(".primary-navigation");
+            const toggleImg = document.getElementById("toggle-img");
+          
+            mobileNavToggle.addEventListener("click", () => {
+              const isVisible = primaryNavigation.getAttribute("data-visible") === "true";
+              primaryNavigation.setAttribute("data-visible", !isVisible);
+          
+              // Update the image source based on visibility state
+              toggleImg.src = isVisible ? "{% static 'style/includes/menu.png' %}" : "{% static 'style/includes/close.png' %}";
+            });
+          </script>     
+    </header>
+    {% block content %}{% endblock %}
+</body>
+
+</html>

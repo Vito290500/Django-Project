@@ -1,0 +1,37 @@
+{% extends "site/base.html" %} 
+{% load static %}
+
+{% block title %} 
+    Home Page
+{% endblock %}
+
+{% block css_file %}
+    <link rel="stylesheet" href="{% static 'style/index.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="bg-image"></div>
+
+<div class="home-container">
+    <h1>Welcome to my Personal Site Portfolio.</h1>
+    <h2>I'm Vito di venosa</h2>
+    <div class="text-animate">
+        <h3>and i'm a full stack python developer.</h3>
+    </div>
+
+    <div class="btn-box">
+        <a href="{% url 'contact_me' %}" class="btn">Contact Me</a>
+        <a href="{% url 'my-projects' %}" class="btn">My Projects</a>
+    </div>
+    
+</div>
+<div class="link">
+    <div class="home-sci">
+        <a href="{{ data.github }}"><i class="bx bxl-github"></i></a>
+        <a href="{{ data.instagram }}"><i class="bx bxl-instagram"></i></a>
+        <a href="{{ data.linkedin }}"><i class="bx bxl-linkedin"></i></a>
+    </div>
+</div>
+
+{% endblock %}
+

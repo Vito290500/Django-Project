@@ -1,0 +1,139 @@
+{% extends "site/base.html" %} 
+{% load static %}
+
+{% block title %} 
+    Home Page
+{% endblock %}
+
+{% block css_file %}
+    <link rel="stylesheet" href="{% static 'style/about.css' %}">
+{% endblock %}
+
+
+
+
+{% block content %}
+<div class="Image"></div>
+
+<div class="About">
+  <h1>About Me</h1>
+</div>
+
+<div class="content-wrapper"> 
+  <div class="introduction-me">
+  
+
+    <div class="introduction-container">
+      <div class="image-container">
+        <img src="{% static 'style/includes/me.jpg' %}" alt="" width="300px" height="300">    
+      </div>
+  
+      <div class="title-container">
+        <h1 class="fade-in">Hi! I'm Vito di Venosa.</h1>
+        <h2 class="fade-in">Junior full-stack python developer.</h2> 
+      </div>
+    </div>
+  
+    <div class="content-container">
+      <p class="fade-in">I'm 23 years old and I'm from Trani, Italy.</p>
+      <p class="fade-in">I like tech and my passion is coding, actually I have a good knowledge of backend with some</p>
+      <p class="fade-in">good frontend knowledge. I am constantly improving both in terms of knowledge and soft skills.</p>
+      <p class="fade-in">I would like to grow as much as possible as a developer.</p>
+    </div>
+
+    
+    <div class="btn-box">
+      <a href="{% url 'my-projects' %}" class="btn">View My Projects</a>
+      <a href="{% url 'download_file' %}" class="btn">Download my Cv</a>
+    </div>
+   
+  
+    <div class="knowledges" id="skills-section">
+      <div class="Titolo-Skill">
+        <h1>MY SKILLS</h1>
+      </div>
+
+      <div class="all-knowledge">
+        <div class="tecnical-skills">
+          <h2>Tecnical Skills</h2>
+
+          <ul class="All-Tecnical-Skills">
+            <h3>BACKEND SKILLS</h3>
+            <div class="backend-skills-container ">
+              {% for skill in backend %}
+                <div class="backend-container">
+                  <img src="{{ skill.image.url }}" alt="" width="200px" height="150px">
+                </div>
+              {% endfor %}
+            </div>
+
+            <div class="backend-skills-container">
+              {% for skill in python %}
+                <div class="backend-container">
+                  <img src="{{ skill.image.url }}" alt="" width="200px" height="150px">
+                </div>
+              {% endfor %}
+            </div>
+
+            <h3>FRONTEND SKILLS</h3>
+            <div class="frontend-skills-container">
+              {% for skill in frontend %}
+                <div class="frontend-container">
+                  <img src="{{ skill.image.url }}" alt="" width="160px" height="130px">
+                </div>
+              {% endfor %}
+            </div>
+
+            <h3>DEPLOYMENT</h3>
+            <div class="deploy-skills-container">
+              {% for skill in deploy %}
+                <div class="deploy-container">
+                  <img src="{{ skill.image.url }}" alt="" width="160px" height="130px">
+                </div>
+              {% endfor %}
+            </div>
+
+            <h3>OTHER</h3>
+            <div class="deploy-skills-container">
+              {% for skill in other %}
+                <div class="deploy-container">
+                  <img src="{{ skill.image.url }}" alt="" width="160px" height="130px">
+                </div>
+              {% endfor %}
+            </div>
+          </ul>
+
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</div> 
+
+<script>
+  // Function to check if an element is in the viewport
+  function isInViewport(element) {
+    const rect = element.getBoundingClientRect();
+    return (
+      rect.top >= 0 &&
+      rect.left >= 0 &&
+      rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+      rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
+  }
+
+  // Function to handle scroll events
+  function handleScroll() {
+    const skillsSection = document.getElementById("skills-section");
+
+    if (isInViewport(skillsSection)) {
+      skillsSection.classList.add("fade-in");
+    }
+  }
+
+  // Add event listener to handle scroll events
+  window.addEventListener("scroll", handleScroll);
+</script>
+
+</div>
+{% endblock %}

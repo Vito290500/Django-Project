@@ -1,0 +1,366 @@
+.bg-image {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    margin-top: 6rem;
+    background-image: url('includes/postazione3.jpg');
+    filter: blur(10px);
+    -webkit-filter: blur(10px);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.My-projects {
+    position: relative;
+    -webkit-text-stroke: .7px black;
+}
+.My-projects h1 {
+    color: #ff7011;
+    font-weight: bold;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -230%);
+    z-index: 2;
+    width: 80%;
+    padding: 20px;
+    text-align: center;   
+    font-size: 50px;
+}
+.all-projects{
+  position: absolute;
+  height: 100%;
+  width: 80%;
+  left: 10%;
+  margin-top: 4rem;
+}
+.container {
+  height: 270px;
+  border-radius: 10px;
+  background-color: rgb(31, 30, 32);
+  display: flex;
+  overflow: hidden;
+  position: relative;
+  transition: transform 0.3s ease; 
+  margin-bottom: 2rem;
+}
+.container:hover {
+  transform: scale(1.1); 
+}
+.image-projects img {
+  height: 250; 
+}
+.image-projects{
+  margin-left: 2rem;
+}
+.image-projects img{
+  margin-top: 1.8rem;
+}
+.projects-content{
+  width: 60%;
+  align-items: center;
+  margin-left: 4rem;
+  margin-top: 0.5rem;
+}
+.projects-title{
+  color: #ff7011;
+  font-size: 25px;
+}
+.spec-container{
+  display: flex;
+  justify-content: space-between;
+  width: 18rem;
+}
+.tag{
+  background-color: rgb(25, 25, 25);
+  border-radius: 10px;
+  color: rgb(165, 161, 161);
+  height: 50px;
+  width: 100px;
+}
+.tag h2{
+  font-size: 18px;
+  margin-left: 10px;
+}
+.date{
+  background-color: rgb(25, 25, 25);
+  border-radius: 10px;
+  color: rgb(165, 161, 161);
+  height: 50px;
+  width: 170px;
+}
+.date h2{
+  font-size: 18px;
+  margin-left: 10px;
+}
+.content-container{
+  color: rgb(165, 161, 161);
+}
+.link-container{
+  margin-top: -1rem;
+}
+.link-site{
+  display: flex;
+}
+.link-site a{
+  margin-top: 1rem;
+  margin-left: 1rem;
+  color: rgb(165, 161, 161);
+  text-decoration: none;
+}
+.link-git{
+  display: flex;
+}
+.link-git p,
+.link-site{
+  margin-top: 0rem;
+  color: white;
+}
+.link-git a{
+  text-decoration: none;
+  margin-left: 1rem;
+  color: rgb(165, 161, 161);
+}
+.link-site a:hover{
+  color: #ff7011;
+}
+.link-git a:hover{
+  color: #ff7011;
+}
+
+/* Responsive Styles for Smartphone Screens */
+@media screen and (max-width: 767px) {
+  /* Adjustments for screens up to 768px width (e.g., smartphones) */
+
+  .bg-image {
+      height: 200px;
+  }
+  .My-projects h1 {
+      font-size: 30px;
+      transform: translate(-50%, -200%);
+  }
+  .all-projects {
+      width: 90%;
+      left: 5%;
+      margin-top: 2rem;
+  }
+  .container {
+      height: 450px;
+  }
+  .image-projects img {
+      height: 60%;
+      width: 160px;
+  }
+  .image-projects {
+      margin-left: 1rem;
+      width: 40%;
+  }
+  .projects-content {
+      width: 40%;
+      margin-left: 3rem;
+  }
+  .projects-title {
+      font-size: 20px;
+  }
+  .spec-container {
+    display: flex;
+    flex-direction: column;
+    width: 15rem;
+  }
+  .tag {
+      width: 80px;
+  }
+  .date {
+      width: 120px;
+  }
+  .tag h2,
+  .date h2 {
+      font-size: 14px;
+  }
+  .link-container{
+    width: 100%;
+    transform: translate(-140%, 25%);
+  }
+  .link-site a{
+    width: 100px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-size: 15px;
+  }
+  .link-git{
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-size: 13px;
+  }
+  
+  
+}
+
+/* Responsive Styles for Tablet Screens */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  /* Adjustments for screens between 769px and 1024px width (e.g., tablets) */
+  /* Adjustments for screens up to 768px width (e.g., smartphones) */
+
+  .bg-image {
+    height: 200px;
+  }
+  .My-projects h1 {
+      font-size: 30px;
+      transform: translate(-50%, -200%);
+  }
+  .all-projects {
+      width: 90%;
+      left: 5%;
+      margin-top: 2rem;
+  }
+  .container {
+      height: 450px;
+  }
+  .image-projects img {
+      height: 60%;
+      width: 300px;
+  }
+  .image-projects {
+    margin-left: 1rem;
+    width: 40%;
+  }
+  .projects-content {
+      width: 40%;
+      margin-left: 3rem;
+  }
+  .projects-title {
+      font-size: 30px;
+  }
+  .spec-container {
+    margin-top: 2rem;
+    display: flex;
+    width: 15rem;
+  }
+  .tag {
+      width: 80px;
+  }
+  .date {
+      width: 120px;
+  }
+  .tag h2,
+  .date h2 {
+      font-size: 14px;
+  }
+  .link-container{
+    width: 100%;
+    transform: translate(0%, 100%);
+  }
+  .link-site a{
+    width: 100px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-size: 15px;
+  }
+  .link-git{
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-size: 15px;
+  }
+
+  /* ... (Add responsive styles for tablets here) */
+}
+
+/* Responsive Styles for Laptop/Desktop Screens */
+@media screen and (min-width: 1500px) {
+  .container{
+    height: 350px;
+    width: 90%;
+    left: 5%;
+  }
+  .image-projects img{
+    height: 280px;
+    width: 500px;
+  }
+
+  .projects-content{
+    margin-left: 5rem;
+  }
+
+  .projects-title {
+    font-size: 30px;
+  }
+
+  .spec-container {
+    width: 23rem;
+  } 
+
+  .tag {
+    width: 150px;
+  } 
+  .tag h2{
+    font-size: 20px;
+    margin-left: 2rem;
+    margin-top: 0.8rem;
+  }
+
+  .date {
+    width: 200px;
+  }
+  .date h2{
+    font-size: 20px;
+    margin-top: 0.7rem;
+    margin-left: 1rem;
+  }
+
+  .content-container p{
+    font-size: 20px;
+  }
+
+  .link-container{
+    font-size: 20px;
+  }
+}
+@media screen and (min-width: 2300px) {
+  .container{
+    height: 450px;
+    width: 90%;
+    left: 5%;
+  }
+  .image-projects img{
+    height: 380px;
+    width: 700px;
+  }
+
+  .projects-content{
+    margin-left: 10rem;
+  }
+
+  .projects-title {
+    font-size: 40px;
+  }
+
+  .spec-container {
+    width: 35rem;
+  } 
+
+  .tag {
+    width: 250px;
+  } 
+  .tag h2{
+    font-size: 30px;
+    margin-left: 4rem;
+    margin-top: 0.4rem;
+  }
+
+  .date {
+    width: 300px;
+  }
+  .date h2{
+    font-size: 30px;
+    margin-top: 0.4rem;
+    margin-left: 2rem;
+  }
+
+  .content-container p{
+    font-size: 30px;
+  }
+
+  .link-container{
+    font-size: 30px;
+  }
+}

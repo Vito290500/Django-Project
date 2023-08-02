@@ -1,0 +1,56 @@
+{% extends "site/base.html" %} 
+{% load static %}
+
+{% block title %} 
+    Home Page
+{% endblock %}
+
+{% block css_file %}
+    <link rel="stylesheet" href="{% static 'style/my-project.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="bg-image"></div>
+<div class="My-projects">
+  <h1>My Projects</h1>
+</div>
+
+<section class="all-projects">
+  {% for item in latest %}
+    <div class="container">
+      <div class="image-projects">
+          <img src="{{ item.image.url }}" alt="" width="240px" height="210px">
+      </div>
+
+      <div class="projects-content">
+          <h1 class="projects-title">{{ item.titolo }}</h1>
+          <div class="spec-container">
+              <div class="tag">
+                  <h2>{{ item.lenguage }}</h2>
+              </div>
+              <div class="date">
+                  <h2>🕑{{ item.date }}</h2>
+              </div>
+          </div>
+
+          <div class="content-container">
+              <p>{{ item.description }}</p>
+          </div>
+          
+          <div class="link-container">
+              <div class="link-site">
+                  <p>link website:</p>
+                  <a href="{{ item.link }}">{{ item.state }}</a>
+              </div>
+
+              <div class="link-git">
+                  <p>link github:</p>
+                  <a href="{{ item.link_github }}">{{ item.state }} source code</a>
+              </div>
+          </div>  
+      </div>
+  </div>
+  {% endfor %}  
+</section>
+
+{% endblock %}

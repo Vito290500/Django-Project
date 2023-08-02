@@ -1,0 +1,138 @@
+{% extends "site/base.html" %} 
+{% load static %}
+
+{% block title %} 
+    Home Page
+{% endblock %}
+
+{% block css_file %}
+    <link rel="stylesheet" href="{% static 'style/contact.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="Image"></div>
+
+
+
+<div class="Contact-form">
+    <h1>CONTACT ME</h1>
+    <div class="container_content">
+
+        {% if errors_title %}
+            <div class="errors">
+                <img src="{% static 'style/includes/error.png' %}" alt="">
+                <div class="errors_content">
+                    <h2>{{ errors_title }}</h2>
+                    <p>{{ errors_text }}</p>
+                </div>
+            </div>
+        {% endif %}
+
+        {% if success %}
+            <div class="success">
+                <img src="{% static 'style/includes/success.png' %}" alt="">
+                <div class="success_content">
+                    <h2>SUCCESSFULLY SUBMITTED!</h2>
+                    <p>Thanks for submitted, I will reply very shortly.</p>
+                </div>
+            </div>
+        {% endif %}
+
+        <div class="info">
+            <h2> Contact</h2>
+            <div class="Address">
+                <div class ="Address-ico">
+                    <img src="{% static 'style/includes/address.png' %}" alt="" width="60px" height="40px">
+                </div>
+                <div class="SottoClasse">
+                    <div class="tag">
+                        <h3>ADDRESS:</h3>
+                    </div>
+                    <div class="content">
+                        <p>Trani 76125, Puglia, Italy</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="Email">
+                <div class ="Email-ico">
+                    <img src="{% static 'style/includes/email.png' %}" alt="" width="50px" height="50px">
+                </div>
+                <div class="SottoClasse">
+                    <div class="tag">
+                        <h3>EMAIL:</h3>
+                    </div>
+                    <div class="content">
+                        <p>{{ data.email }}</p>
+                    </div>
+                </div>
+            </div> 
+
+            <div class="Instagram">
+                <div class ="Instagram-ico">
+                    <img src="{% static 'style/includes/instagram.png' %}" alt="" width="50px" height="50px">
+                </div>
+                <div class="SottoClasse">
+                    <div class="tag">
+                        <h3>INSTAGRAM:</h3>
+                    </div>
+                    <div class="Instagram-content">
+                        <a href="{{ data.instagram }}">My Instagram</a>
+                    </div>
+                </div>
+            </div>               
+            <div class="Github">
+                <div class ="Github-ico">
+                    <img src="{% static 'style/includes/github.png' %}" alt="" width="50px" height="50px">
+                </div>
+                <div class="SottoClasse">
+                    <div class="tag">
+                        <h3>GITHUB:</h3>
+                    </div>
+                    <div class="Github-content">
+                        <a href="{{ data.github }}">My Github</a>
+                    </div>
+                </div>
+            </div>             
+            <div class="linkedin">
+                <div class ="linkedin-ico">
+                    <img src="{% static 'style/includes/linkedin.png' %}" alt="" width="50px" height="50px">
+                </div>
+                <div class="SottoClasse">
+                    <div class="tag">
+                        <h3>LINKEDIN:</h3>
+                    </div>
+                    <div class="Linkedin-content">
+                        <a href="{{ data.linkedin }}">My linkedin</a>
+                    </div>
+                </div>
+            </div>                  
+        </div>
+
+        <div class="form">
+            <h2>Get in touch</h2>
+            <form action="contact" method="POST">  
+                {% csrf_token %}
+                <div class="Input-container">
+                    <div>
+                        <input type="text" name="Name" id="nameInput" placeholder="Name" >
+                    </div>
+                    <div>
+                        <input type="text" name="Email_submit" id="emailInput" placeholder="Email">
+                    </div>
+                    <div>
+                        <input type="text" name="Subject" id="subjectInput" placeholder="Subject">
+                    </div>
+                    <div>
+                        <textarea name="Message" id="messageInput" cols="50" rows="12" placeholder="Message"></textarea>
+                    </div>
+                    <button class="form_submit">Send Message</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript"src="{% static 'style/js/disappear.js' %}"></script>
+
+{% endblock %}
